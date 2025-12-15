@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Name - Premium Coffee & Pastries</title>
+  <title>Kōhī by Ifuku - Premium Quality Coffee & Pastries</title>
   <style>
     * {
       margin: 0;
@@ -13,7 +13,7 @@
     }
 
     body {
-      background: #fff7ef;
+      background: #effff2;
       color: #3a2f2a;
       overflow-x: hidden;
     }
@@ -24,11 +24,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(245, 225, 211, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       position: fixed;
       top: 0;
       z-index: 100;
-      border-bottom: 2px solid #e2c6b8;
+      border-bottom: 2px solid #b8e2bf;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
@@ -41,7 +41,7 @@
     header h1 {
       font-size: 28px;
       font-weight: bold;
-      background: linear-gradient(135deg, #d97b48, #a15532);
+      background: linear-gradient(135deg, #000000, #000000);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -68,7 +68,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #d97b48;
+      background: #00833b;
       transition: width 0.3s;
     }
 
@@ -77,7 +77,7 @@
     }
 
     nav a:hover {
-      color: #d97b48;
+      color: #00833b;
     }
 
     .hero {
@@ -98,7 +98,8 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(217, 123, 72, 0.3), rgba(58, 47, 42, 0.6));
+      background: linear-gradient(135deg,  rgba(217, 123, 72, 0.3), rgba(58, 47, 42, 0.6)); /*no touchy*/
+      
     }
 
     .hero-content {
@@ -139,11 +140,11 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      background: linear-gradient(135deg, #d97b48, #b86133);
+      background: linear-gradient(135deg, #00833b, #00bb54);
       color: white;
       transition: all 0.3s;
       font-weight: 600;
-      box-shadow: 0 6px 20px rgba(217, 123, 72, 0.4);
+      box-shadow: 0 6px 20px rgba(72, 217, 108, 0.4);
       position: relative;
       overflow: hidden;
     }
@@ -168,7 +169,7 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(217, 123, 72, 0.5);
+      box-shadow: 0 10px 30px rgba(72, 217, 91, 0.5);
     }
 
     .btn-secondary {
@@ -180,9 +181,12 @@
 
     .btn-secondary:hover {
       background: white;
-      color: #d97b48;
+      color: #00833b;
     }
 
+    .btn-primary {
+        margin-top: 2rem;
+    }
     .section {
       padding: 100px 40px;
       text-align: center;
@@ -203,18 +207,23 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: linear-gradient(90deg, #d97b48, #a15532);
+      background: linear-gradient(90deg, #00833b, #00bb54);
       border-radius: 2px;
     }
 
     .section p.subtitle {
       font-size: 18px;
-      color: #6b5d57;
+      color: #576b5a;
       margin-top: 25px;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
+    }
+
+    .menusec, .gallerysec{
+
+      background: url(./coffeebeans2.png) center/cover no-repeat;
     }
 
     .features {
@@ -229,7 +238,8 @@
 
     .feature-box {
       padding: 40px 30px;
-      background: white;
+      background: #58976d77;
+      border: 3px #00833b solid ;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: all 0.3s;
@@ -244,14 +254,14 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #d97b48, #a15532);
+      background: linear-gradient(90deg, #00833b, #00bb54);
       transform: scaleX(0);
       transition: transform 0.3s;
     }
 
     .feature-box:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(217, 123, 72, 0.2);
+      box-shadow: 0 15px 40px rgba(42, 129, 61, 0.2);
     }
 
     .feature-box:hover::before {
@@ -277,7 +287,7 @@
     }
 
     .stats {
-      background: linear-gradient(135deg, #d97b48, #a15532);
+      background: linear-gradient(135deg, #00833b, #00bb54);
       color: white;
       padding: 80px 40px;
       margin: 60px 0;
@@ -351,7 +361,7 @@
     }
 
     .cta-section {
-      background: #f5e1d3;
+      background: #6fb97c83;
       padding: 80px 40px;
       text-align: center;
     }
@@ -388,8 +398,8 @@
 
     .social-icon:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(217, 123, 72, 0.3);
-      background: #d97b48;
+      box-shadow: 0 8px 20px rgba(48, 148, 86, 0.3);
+      background: #00833b;
       color: white;
     }
 
@@ -413,7 +423,7 @@
     .footer-section h4 {
       font-size: 20px;
       margin-bottom: 15px;
-      color: #d97b48;
+      color: #00833b;
     }
 
     .footer-section p, .footer-section a {
@@ -425,7 +435,7 @@
     }
 
     .footer-section a:hover {
-      color: #d97b48;
+      color: #00833b;
     }
 
     .footer-bottom {
@@ -495,7 +505,7 @@
 <body>
 
   <header id="header">
-    <h1>Café Name</h1>
+    <h1>Kōhī by Ifuku</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#menu">Menu</a>
@@ -506,8 +516,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Fresh Coffee, Cozy Atmosphere</h2>
-      <p>Your neighbourhood café — serving warmth in every cup, crafted with passion.</p>
+      <h2>Amazing Coffee, Good Vibes</h2>
+      <p>Your favourite café — putting our heart in every cup, crafted with passion.</p>
       <button class="btn" onclick="scrollToContact()">Order Now</button>
       <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
     </div>
@@ -517,21 +527,22 @@
   <section class="section" id="about">
     <h3>About Us</h3>
     <p class="subtitle">
-      We are a small, passionate café dedicated to bringing you the finest coffee experience. 
+      We are a small, passionate café dedicated to bringing you the most jazzy, authentic, quality coffee experience available. 
+      We take pride and care in our craftsmanship in effort to make exceptionally creative, high quality coffee you can find in Johannesburg.
       From hand-selected beans to artisan pastries baked fresh daily, every detail is crafted 
-      with care. Our cozy space is designed to be your home away from home — whether you're 
-      catching up with friends, working remotely, or simply enjoying a quiet moment.
+      with care and innovation. Our cozy space is designed to be your home away from home — whether you're 
+      catching up with friends, working remotely, or simply enjoying a quiet moment and excellent coffee.
     </p>
   </section>
 
   <section class="stats">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-number">5+</div>
+        <div class="stat-number">1+</div>
         <div class="stat-label">Years Serving</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">50+</div>
+        <div class="stat-number">20+</div>
         <div class="stat-label">Menu Items</div>
       </div>
       <div class="stat-item">
@@ -545,20 +556,21 @@
     </div>
   </section>
 
-  <section class="section" id="menu">
+  <section class="section menusec" id="menu">
     <h3>Our Specialities</h3>
     <p class="subtitle">Every item on our menu is prepared with premium ingredients and a lot of love</p>
 
-    <div class="features">
+    <div class="features"> 
+        <!--NOTE IDEA: CLICK EACH ITEM TO REVEAL EXTENSIVE MENU OR JUST SEPERATE MENU PAGE?-->
       <div class="feature-box">
         <div class="feature-icon">☕</div>
         <div class="feature-title">Premium Coffee</div>
-        <div class="feature-desc">Ethically sourced beans, expertly roasted and brewed to perfection. From espresso to pour-over, we've got your caffeine fix covered.</div>
+        <div class="feature-desc">Ethically sourced beans, expertly roasted and authentically brewed to perfection. From espresso to pour-over, we've got your caffeine fix covered.</div>
       </div>
       <div class="feature-box">
         <div class="feature-icon">🥐</div>
         <div class="feature-title">Fresh Pastries</div>
-        <div class="feature-desc">Buttery croissants, flaky danishes, and artisan breads baked fresh every morning by our talented pastry team.</div>
+        <div class="feature-desc">Buttery croissants, flaky danishes, baked fresh every morning by our talented pastry team.</div>
       </div>
       <div class="feature-box">
         <div class="feature-icon">🍰</div>
@@ -583,7 +595,7 @@
     </div>
   </section>
 
-  <section class="section" id="gallery">
+  <section class="section gallerysec" id="gallery">
     <h3>Our Gallery</h3>
     <p class="subtitle">Take a peek at our cozy space and delicious offerings</p>
     
@@ -613,14 +625,14 @@
     <div class="cta-content">
       <h3>Ready to Experience the Best Coffee in Town?</h3>
       <p class="subtitle">Reach us on WhatsApp to place an order, book a table, or make any inquiries. We're here to serve you!</p>
-      <button class="btn" onclick="window.location.href='https://wa.me/0000000000'">
+      <button class="btn btn-primary" onclick="window.location.href='https://wa.me/0612953300'">
         📱 WhatsApp Us Now
       </button>
       
       <div class="social-links">
-        <a href="#" class="social-icon">📘</a>
-        <a href="#" class="social-icon">📷</a>
-        <a href="#" class="social-icon">🐦</a>
+        <!--a href="#" class="social-icon">📘</a-->
+        <a href="https://www.instagram.com/kohi_by_ifuku/?hl=en" class="social-icon">📷</a>
+        <!--a href="#" class="social-icon">🐦</a-->
       </div>
     </div>
   </section>
@@ -629,7 +641,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <h4>About</h4>
-        <p>Your neighbourhood café serving premium coffee and delicious food since 2020.</p>
+        <p>Your neighbourhood café serving premium coffee and delicious food since 2024.</p>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
@@ -640,18 +652,19 @@
       </div>
       <div class="footer-section">
         <h4>Hours</h4>
-        <p>Mon - Fri: 7:00 AM - 8:00 PM</p>
-        <p>Sat - Sun: 8:00 AM - 9:00 PM</p>
+        <p>Mon - Sat: 8:00 AM - 5:00 PM</p>
+        <p>Sat - Sun: 8:00 AM - 4:00 PM</p>
       </div>
       <div class="footer-section">
         <h4>Contact</h4>
-        <p>📍 123 Main Street</p>
-        <p>📞 +27 000 000 000</p>
-        <p>✉️ hello@cafename.com</p>
+        <p>📍 44 Stanley Avenue</p>
+        <p>📞 +27 061 295 3300</p>
+        <p><a href="https://www.instagram.com/kohi_by_ifuku/?hl=en">Instagram</a></p>
+        <!--p>✉️ hello@cafename.com</p-->
       </div>
     </div>
     <div class="footer-bottom">
-      © 2025 Café Name. All Rights Reserved. | Crafted with ❤️
+      © 2025 Kōhī by Ifuku. All Rights Reserved. | Crafted with ❤️
     </div>
   </footer>
 
