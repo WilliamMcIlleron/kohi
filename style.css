@@ -41,6 +41,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: none;
   }
 
   nav {
@@ -472,7 +473,7 @@
     }
 
     nav {
-      gap: 15px;
+      gap: 10px;
     }
 
     .hero-content h2 {
