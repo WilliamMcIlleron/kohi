@@ -2,8 +2,10 @@
 function scrollToMenu() {
     document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
   }
-
-  document.querySelector('.feature-box').addEventListener('click', () => {
+  document.querySelector('.pastry-box').addEventListener('click', () => {
+    window.open('./menu.html', '_self')
+}) 
+  document.querySelector('.coffee-box').addEventListener('click', () => {
     window.open('./menu.html', '_self')
 }) 
   function scrollToSection(id) {
