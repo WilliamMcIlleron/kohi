@@ -4,12 +4,40 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+  :root {
+    --cream: #f7f6da; 
+    --light-orange: #f6b26b;
+    --orange: rgb(230, 145, 56);
+    --lightest-brown: #b45f06;
+    --light-brown: #783f04;
+    --brown: #522c05;
+
+  }
 
   body {
-    background: #effff2;
     color: #3a2f2a;
     overflow-x: hidden;
   }
+
+  .loader {
+    border: 16px solid var(--cream); /* Light grey background border */
+    border-top: 16px solid var(--orange); /* Blue top border that creates the "spinner" effect */
+    border-radius: 50%; /* Makes the div a circle */
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite; /* Applies the spin animation */
+    /* Center the loader on the page (optional but common) */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px; /* Half of height */
+    margin-left: -60px; /* Half of width */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
   header {
     width: 100%;
@@ -17,27 +45,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(247, 246, 218, 0.95);
     position: fixed;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid #4c5c4e;
+    /*border-bottom: 2px solid var(--light-orange);*/
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
   }
 
   header.scrolled {
     padding: 15px 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20pbx rgba(0,0,0,0.1);
   }
 
   .gallery-link {
-    color: white;
+    color: black;
   }
   header h1 a {
     font-size: 30px;
     font-weight: bold;
-    background: white;
+    background: var(--brown);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -51,7 +79,7 @@
 
   nav a {
     text-decoration: none;
-    color: white;
+    color: var(--brown);
     font-weight: 600;
     transition: all 0.3s;
     position: relative;
@@ -65,7 +93,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #00833b;
+    background: var(--light-orange);
     transition: width 0.3s;
   }
 
@@ -74,7 +102,7 @@
   }
 
   nav a:hover {
-    color: #00833b;
+    color: var(--light-orange);
   }
 
   .hero {
@@ -85,7 +113,7 @@
     align-items: center;
     text-align: center;
     padding: 20px;
-    background: url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0') center/cover no-repeat;
+    background: url('./images/image7.jpeg') center/cover no-repeat;
     position: relative;
     margin-top: 70px;
   }
@@ -137,11 +165,11 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    background: linear-gradient(135deg, #00833b, #00bb54);
+    background: linear-gradient(135deg, var(--light-brown), var(--light-brown));
     color: white;
     transition: all 0.3s;
     font-weight: 600;
-    box-shadow: 0 6px 20px rgba(72, 217, 108, 0.4);
+    box-shadow: 0 6px 20px rgba(246, 178, 107, 0.4);
     position: relative;
     overflow: hidden;
   }
@@ -154,7 +182,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
   }
@@ -166,7 +194,7 @@
 
   .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(72, 217, 91, 0.5);
+    box-shadow: 0 10px 30px rgba(230, 145, 56, 0.5);
   }
 
   .btn-secondary {
@@ -220,23 +248,20 @@
   a {
     color:#00833b;
   }
-  .gallerysec {
-    background: #009141b4;
-  }
-
-  #gallerypage {
-    background: #b8e2bf;
-  }
-  #gallerypage .gallerysec {
-    background: none;
-  }
-  
-  .menusec {
-    background-color: #6fb97c83;
-  }
-  
   
 
+  
+ 
+  
+ 
+  
+  
+  .coffee-box {
+    background: url(./images/image13.jpeg) center 70%/cover no-repeat;
+  }
+  .pastry-box {
+    background: url(./images/image17.jpeg) center/cover no-repeat;
+  }
   .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -249,7 +274,6 @@
 
   .feature-box {
     padding: 40px 30px;
-    background: #58976d77;
     border: 3px #00833b solid ;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -345,7 +369,7 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
   .see-more {
-    background: url(./plus.png) center/cover no-repeat;
+    background: url(./images/plus.png) center/cover no-repeat;
 
   }
   .gallery-item img {
@@ -353,6 +377,12 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
+  }
+  img.bottom-right {
+    object-position: bottom right;
+  }
+  img.bottom-left {
+    object-position: bottom left;
   }
 
   .gallery-item:hover img {
@@ -458,10 +488,15 @@
     border-top: 1px solid rgba(255,255,255,0.1);
   }
   video {
-    width: 40%;
+    width: 20%;
     height: auto;
     margin-top: 2rem;
 
+  }
+  @media (min-width: 768px) {
+    .hero {
+        background-position: center bottom;
+    }
   }
 
   @media (max-width: 768px) {
@@ -494,7 +529,7 @@
       text-align: center;
     }
     video {
-        width: 300;
+        width: 70%;
         height: auto;
     }
   }

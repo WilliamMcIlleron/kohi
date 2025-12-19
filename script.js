@@ -15,3 +15,25 @@ function scrollToMenu() {
       header.classList.remove('scrolled');
     }
   });
+  
+    document.querySelector('.see-more').addEventListener('click', () => {
+        window.open('./gallery.html', '_self')
+    }) 
+  // loader
+  // Function to show the loader
+function showLoader() {
+    document.querySelector('.loader').style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    document.querySelector('.loader').style.display = 'none';
+}
+
+// Example usage:
+// Initially show the loader
+showLoader();
+
+  window.addEventListener('load', () => {
+    hideLoader();
+  })
