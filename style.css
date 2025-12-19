@@ -18,6 +18,8 @@
     color: #3a2f2a;
     overflow-x: hidden;
   }
+ 
+ 
 
   .loader {
     border: 16px solid var(--cream); /* Light grey background border */

@@ -1,8 +1,11 @@
+//Menu Scroller and Opener
 function scrollToMenu() {
     document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
   }
 
-
+  document.querySelector('.feature-box').addEventListener('click', () => {
+    window.open('./menu.html', '_self')
+}) 
   function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
@@ -15,6 +18,7 @@ function scrollToMenu() {
       header.classList.remove('scrolled');
     }
   });
+
   //Gallery Opener
     document.querySelector('.see-more').addEventListener('click', () => {
         window.open('./gallery.html', '_self')
@@ -36,6 +40,7 @@ showLoader();
 
   window.addEventListener('load', () => {
     hideLoader();
+    
   })
 
   // Hamburger menu
