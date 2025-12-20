@@ -254,9 +254,11 @@
   hr {
     height: 10px;
     background: linear-gradient(90deg, var(--light-brown, black), var(--lightest-brown));
-    width: 25vw;
+    
     margin-left: 37.5vw;
+    margin-right: 37.5vw;
   }
+
   .section h3::after {
     content: '';
     position: absolute;
