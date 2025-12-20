@@ -300,7 +300,7 @@
   }
 
   .feature-box {
-    padding: 40px 30px;
+    padding: 10px 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: all 0.3s;
@@ -340,13 +340,25 @@
     font-weight: 400;
     margin-bottom: 12px;
     color: #fff;
+    
   }
 
   .feature-desc {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--cream);
     line-height: 1.6;
     font-weight: 400;
+    width: 50%;
+  }
+  .coffee-box .feature-title, .coffee-box .feature-desc {
+    text-align: left;
+  }
+
+  .pastry-box .feature-title, .pastry-box .feature-desc {
+    position: relative;
+    text-align: right;
+    width: 50%;
+    left: 50%
   }
 
   .stats {
@@ -590,6 +602,17 @@
 
     .section h3 {
       font-size: 32px;
+    }
+
+    .coffee-box .feature-desc, .pastry-box .feature-desc, .pastry-box .feature-title {
+      width: 100%;
+      max-height: 30%;
+    }
+
+    .pastry-box .feature-desc, .pastry-box .feature-title {
+      position: relative;
+      left: 5px;
+      top: 2px;
     }
 
     .btn-secondary {
