@@ -63,8 +63,6 @@ header.scrolled {
   box-shadow: 0 4px 20pbx rgba(0,0,0,0.1);
 }
 
-
-
 header h1 a {
   font-size: 35px;
   background: black;
@@ -83,19 +81,14 @@ header h1 a {
 header h1 a span {
   font-size: 30px;
   background: black;
+  font-size: 30px;
+  font-weight: bold;
+  background: var(--brown);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
-  font-family: "DynaPuff", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 650;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
-
-
 
 li {
   list-style: none;
