@@ -64,6 +64,7 @@ header.scrolled {
 }
 
 header h1 a {
+<<<<<<< HEAD
   font-size: 35px;
   background: black;
   -webkit-background-clip: text;
@@ -82,6 +83,9 @@ header h1 a span {
   font-size: 30px;
   background: black;
   font-size: 30px;
+=======
+  font-size: 30px;
+>>>>>>> parent of b41061c (Add font for logo)
   font-weight: bold;
   background: var(--brown);
   -webkit-background-clip: text;
