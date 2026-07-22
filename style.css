@@ -60,7 +60,7 @@ header {
 
 header.scrolled {
   padding: 15px 40px;
-  box-shadow: 0 4px 20pbx rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 header h1 a {
@@ -228,10 +228,6 @@ nav a:hover {
   transition: width 0.6s, height 0.6s;
 }
 
-.btn:hover::before {
-  width: 300px;
-  height: 300px;
-}
 
 .btn:hover {
   transform: translateY(-3px);
