@@ -2,10 +2,10 @@
 function scrollToMenu() {
     document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
   }
-  document.querySelector('.pastry-box').addEventListener('click', () => {
+  document.querySelector('.pastry-box')?.addEventListener('click', () => {
     window.open('./menu.html', '_self')
 }) 
-  document.querySelector('.coffee-box').addEventListener('click', () => {
+  document.querySelector('.coffee-box')?.addEventListener('click', () => {
     window.open('./menu.html', '_self')
 }) 
   function scrollToSection(id) {
@@ -22,18 +22,20 @@ function scrollToMenu() {
   });
 
   //Gallery Opener
-    document.querySelector('.see-more').addEventListener('click', () => {
+    document.querySelector('.see-more')?.addEventListener('click', () => {
         window.open('./gallery.html', '_self')
     }) 
   // loader
   // Function to show the loader
 function showLoader() {
-    document.querySelector('.loader').style.display = 'block';
+    const loader = document.querySelector('.loader');
+    if (loader) loader.style.display = 'block';
 }
 
 // Function to hide the loader
 function hideLoader() {
-    document.querySelector('.loader').style.display = 'none';
+    const loader = document.querySelector('.loader');
+    if (loader) loader.style.display = 'none';
 }
 
 // Example usage:
