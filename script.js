@@ -46,4 +46,24 @@ showLoader();
   })
 
   // Hamburger menu
-  
+
+  // Lazy-load gallery videos: only fetch source once the video scrolls into view
+  const lazyVideos = document.querySelectorAll('.lazy-video');
+  if (lazyVideos.length) {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          const source = video.querySelector('source[data-src]');
+          if (source) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+            video.load();
+          }
+          observer.unobserve(video);
+        }
+      });
+    }, { rootMargin: '200px 0px' }); // start loading a bit before it's on screen
+
+    lazyVideos.forEach(video => videoObserver.observe(video));
+  }
