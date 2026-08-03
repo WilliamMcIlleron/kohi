@@ -1,0 +1,25 @@
+# Netlify / Cloudflare Pages header rules.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# Fingerprint-free assets, so cache conservatively but still usefully.
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+
+/assets/video/*
+  Cache-Control: public, max-age=2592000
+
+# Subset fonts never change without also changing filename-worthy content.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=86400, must-revalidate
