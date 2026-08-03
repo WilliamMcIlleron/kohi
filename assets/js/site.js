@@ -162,6 +162,10 @@
     });
   }
 
+  /* --- Keep the footer year from going stale ------------------------------- */
+  const year = $('#year');
+  if (year) year.textContent = String(new Date().getFullYear());
+
   /* --- Marquee: duplicate the track so the loop is seamless ---------------- */
   $$('.marquee__track').forEach((track) => {
     if (reduceMotion.matches) return;
