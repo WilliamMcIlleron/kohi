@@ -122,9 +122,6 @@ button {
 
 .label--accent { color: var(--accent); }
 
-/* Numbered label, e.g. "01 — The room" */
-.label-num { font-variant-numeric: tabular-nums; }
-
 .display {
   font-size: var(--text-2xl);
   font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;

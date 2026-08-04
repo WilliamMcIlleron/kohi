@@ -377,18 +377,6 @@
 }
 .ritual__item:hover .ritual__media img { transform: scale(1.045); }
 
-.ritual__num {
-  position: absolute;
-  top: var(--space-s);
-  left: var(--space-s);
-  z-index: 1;
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  color: var(--paper);
-  mix-blend-mode: difference;
-  font-variant-numeric: tabular-nums;
-}
-
 .ritual__title {
   font-size: var(--text-md);
   margin-top: var(--space-s);
