@@ -180,16 +180,12 @@
 }
 
 .hero__media { position: absolute; inset: 0; z-index: -2; }
-.hero__media img,
-.hero__media video {
+.hero__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-/* The looping clip fades in over the poster once it can actually play. */
-.hero__video { position: absolute; inset: 0; opacity: 0; transition: opacity 1s var(--ease); }
-.hero__video.is-playing { opacity: 1; }
 
 .hero__scrim {
   position: absolute;

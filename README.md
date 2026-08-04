@@ -47,10 +47,14 @@ dark section resolves against it without needing its own variant.
 ## Performance
 
 Every image is WebP with `srcset`/`sizes` and explicit `width`/`height`.
-Video never downloads until asked for: the hero swaps its poster for a silent
-6.8-second loop only after `load`, and only when the viewport is wide enough, the
-connection isn't metered, and the visitor hasn't asked for reduced motion.
-Gallery clips load on click.
+No video loads until asked for — the gallery clips fetch on click, and nothing
+else on the site ships video at all.
+
+The hero is a still, deliberately. Every clip in the library is fast-cut social
+footage; the longest usable take runs about three seconds on a moving camera, so
+a loop either jumps at the seam, boomerangs, or flashes a frame of the
+neighbouring shot. A locked-off tripod shot of ten seconds or so would change
+that — until there is one, the still is the honest choice.
 
 | | Before | After |
 |---|---|---|

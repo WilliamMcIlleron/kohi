@@ -76,27 +76,6 @@
     }
   }
 
-  /* --- Hero: upgrade the still to a silent loop, but only when it's free ---- */
-  const heroVideo = $('.hero__video');
-  if (heroVideo) {
-    const conn = navigator.connection;
-    const cheapEnough =
-      !conn || (!conn.saveData && !/2g/.test(conn.effectiveType || ''));
-    const bigEnough = window.matchMedia('(min-width: 40rem)').matches;
-
-    if (cheapEnough && bigEnough && !reduceMotion.matches) {
-      const start = () => {
-        heroVideo.src = heroVideo.dataset.src;
-        heroVideo.load();
-        heroVideo.play()
-          .then(() => heroVideo.classList.add('is-playing'))
-          .catch(() => { /* autoplay refused — the poster stays, which is fine */ });
-      };
-      if (document.readyState === 'complete') start();
-      else window.addEventListener('load', start, { once: true });
-    }
-  }
-
   /* --- Reels: poster until asked, then load and play ----------------------- */
   $$('.reel').forEach((reel) => {
     const button = $('.reel__play', reel);
