@@ -154,4 +154,121 @@
       return clone;
     }));
   });
+
+  /* --- Sessions: is one running right now? --------------------------------- */
+  /* Sessions run 08:00–16:00 on the first and last Sunday of the month. The
+     clock that matters is the room's, not the visitor's, so every comparison is
+     made in SAST. South Africa keeps no daylight saving, which makes a fixed
+     +02:00 exact rather than an approximation, and avoids trusting the
+     visitor's own timezone setting.
+
+     The header shows the state on every page; the Sessions section gets a row
+     above the recurring schedule, so the "first and last Sunday" copy stays
+     intact and this only adds what's true today. */
+
+  const statusEl = $('.session-status');
+  const tracklist = $('#sessions .tracklist');
+
+  if (statusEl || tracklist) {
+    const SAST     = 2 * 60 * 60 * 1000;
+    const DOORS    = 8;    // opens, SAST
+    const CLOSE    = 16;   // closes, SAST
+    const DAYS     = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const MONTHS   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    // A SAST wall-clock time, as an absolute timestamp. Reading it back with
+    // the getUTC* family gives the wall clock again, so the visitor's own
+    // offset never enters the arithmetic. Out-of-range months roll over, which
+    // is what makes December's lookahead into January work.
+    const sast = (y, m, d, h = 0) => Date.UTC(y, m, d, h) - SAST;
+    const wall = (ms) => new Date(ms + SAST);
+
+    const sundaysOf = (y, m) => {
+      const firstDay = new Date(Date.UTC(y, m, 1)).getUTCDay();
+      const lastDate = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+      const lastDay  = new Date(Date.UTC(y, m, lastDate)).getUTCDay();
+      return [1 + ((7 - firstDay) % 7), lastDate - lastDay];
+    };
+
+    // The first session whose doors haven't already shut. Checking next month
+    // too means the last Sunday of any month rolls forward correctly.
+    const nextSession = (now) => {
+      const here = wall(now);
+      const y = here.getUTCFullYear();
+      const m = here.getUTCMonth();
+
+      for (const month of [m, m + 1]) {
+        for (const date of sundaysOf(y, month)) {
+          const closes = sast(y, month, date, CLOSE);
+          if (now < closes) return { opens: sast(y, month, date, DOORS), closes };
+        }
+      }
+      return null;
+    };
+
+    const asDate = (ms) => {
+      const d = wall(ms);
+      return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`;
+    };
+
+    // The Sessions row is built once and rewritten in place on each tick.
+    let nowRow;
+    if (tracklist) {
+      nowRow = document.createElement('div');
+      nowRow.className = 'tracklist__row tracklist__row--now';
+      nowRow.innerHTML =
+        '<dt></dt><dd><span class="status-dot" aria-hidden="true"></span><span></span></dd>';
+      tracklist.prepend(nowRow);
+    }
+
+    const compact = window.matchMedia('(max-width: 52rem)');
+    const sastDay = (ms) => Math.floor((ms + SAST) / 86400000);
+
+    const render = () => {
+      const now = Date.now();
+      const next = nextSession(now);
+      if (!next) return;
+
+      const state = now >= next.opens ? 'live'
+                  : sastDay(now) === sastDay(next.opens) ? 'today'
+                  : 'upcoming';
+      const live = state === 'live';
+
+      if (statusEl) {
+        // The narrow header has room for the wordmark and the toggle and not
+        // much else, so the long form is reserved for the wide layout.
+        const text = live  ? (compact.matches ? 'Live now' : 'Session live now')
+                   : state === 'today'
+                     ? (compact.matches ? 'Today, 08:00' : 'Session today, from 08:00')
+                     : `Next session ${asDate(next.opens)}`;
+
+        statusEl.dataset.state = state;
+        $('.session-status__text', statusEl).textContent = text;
+        $('.status-dot', statusEl).classList.toggle('status-dot--live', live);
+        statusEl.hidden = false;
+      }
+
+      if (nowRow) {
+        $('dt', nowRow).textContent =
+          live ? 'Now' : state === 'today' ? 'Today' : 'Next';
+        $('dd span:last-child', nowRow).textContent =
+          live ? 'Live now, until 16:00'
+               : state === 'today' ? 'From 08:00' : asDate(next.opens);
+
+        nowRow.classList.toggle('tracklist__row--live', live);
+        $('.status-dot', nowRow).classList.toggle('status-dot--live', live);
+      }
+    };
+
+    render();
+
+    // Doors move on the hour, so a minute's granularity is enough — but a tab
+    // left open overnight only catches up when it comes back to the front.
+    setInterval(render, 60000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) render();
+    });
+    compact.addEventListener('change', render);
+  }
 })();
