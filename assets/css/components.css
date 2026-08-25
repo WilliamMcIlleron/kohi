@@ -759,6 +759,18 @@
   color: color-mix(in srgb, var(--paper) 55%, transparent);
 }
 
+/* The build credit. Deliberately the quietest thing in the footer: it inherits
+   the bottom row's muted paper colour and is marked only by a hairline
+   underline, so it reads as a signature rather than an advert on a client's
+   site. */
+.footer__credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--paper) 28%, transparent);
+}
+.footer__credit a:hover { text-decoration-color: currentColor; }
+
 /* --- Lightbox ------------------------------------------------------------- */
 
 .lightbox {
