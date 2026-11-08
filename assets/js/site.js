@@ -156,14 +156,14 @@
   });
 
   /* --- Sessions: is one running right now? --------------------------------- */
-  /* Sessions run 08:00–16:00 on the first and last Sunday of the month. The
+  /* Sessions run 08:00–16:00 every Sunday. The
      clock that matters is the room's, not the visitor's, so every comparison is
      made in SAST. South Africa keeps no daylight saving, which makes a fixed
      +02:00 exact rather than an approximation, and avoids trusting the
      visitor's own timezone setting.
 
      The header shows the state on every page; the Sessions section gets a row
-     above the recurring schedule, so the "first and last Sunday" copy stays
+     above the recurring schedule, so the "Every Sunday" copy stays
      intact and this only adds what's true today. */
 
   const statusEl = $('.session-status');
@@ -184,11 +184,13 @@
     const sast = (y, m, d, h = 0) => Date.UTC(y, m, d, h) - SAST;
     const wall = (ms) => new Date(ms + SAST);
 
+    // Every Sunday of the month, in date order.
     const sundaysOf = (y, m) => {
       const firstDay = new Date(Date.UTC(y, m, 1)).getUTCDay();
       const lastDate = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
-      const lastDay  = new Date(Date.UTC(y, m, lastDate)).getUTCDay();
-      return [1 + ((7 - firstDay) % 7), lastDate - lastDay];
+      const dates = [];
+      for (let d = 1 + ((7 - firstDay) % 7); d <= lastDate; d += 7) dates.push(d);
+      return dates;
     };
 
     // The first session whose doors haven't already shut. Checking next month
