@@ -1,227 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A small café dedicated to bringing you the most jazzy, authentic coffee experience available. Come by for some excellent coffee and a good time">
-  <title>Kōhī by Ifuku - Premium Quality Coffee & Pastries</title>
-  <link rel="preload" href="style.css" as="style">
-<link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="./images/image6.jpeg">
-  <meta property="og:title" content="Kōhī by Ifuku - Premium Quality Coffee & Pastries">
-  <meta property="og:description" content="A small café dedicated to bringing you the most jazzy, authentic coffee experience available. Come by for some excellent coffee and a good time">
-  <meta property="og:image" content="https://www.kohibyifuku.co.za/images/image7.jpeg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kōhī by Ifuku | Coffee, matcha and vinyl at 44 Stanley</title>
+  <meta name="description" content="A café and listening room at 44 Stanley in Milpark, Johannesburg. Coffee, matcha and pastry from eight in the morning, and vinyl sessions on the first and last Sunday of the month.">
+  <link rel="canonical" href="https://www.kohibyifuku.co.za/">
+  <meta name="theme-color" content="#14110d">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kōhī by Ifuku">
+  <meta property="og:title" content="Kōhī by Ifuku | Coffee, matcha and vinyl at 44 Stanley">
+  <meta property="og:description" content="A café and listening room at 44 Stanley in Milpark, Johannesburg.">
   <meta property="og:url" content="https://www.kohibyifuku.co.za/">
+  <meta property="og:image" content="https://www.kohibyifuku.co.za/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Guests with iced matcha at the Kōhī counter, beneath the indigo noren.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/fraunces-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <link rel="preload" as="image" href="/assets/img/hero-1200.webp"
+        imagesrcset="/assets/img/hero-480.webp 480w, /assets/img/hero-800.webp 800w, /assets/img/hero-1200.webp 1200w, /assets/img/hero-1600.webp 1600w, /assets/img/hero-2160.webp 2160w"
+        imagesizes="100vw">
+
+  <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
-  <div class="loader"></div>
-  <header id="header">
-    <h1><a href="./index.html">Kōhī by Ifuku</a></h1>
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="#about">About</a></li>
-        <li class="nav-item"><a href="./menu.html">Menu</a></li>
-        <li class="nav-item"><a href="#sessions">Sessions</a></li>
-        <li class="nav-item"><a href="./gallery.html">Gallery</a></li>
-        <li class="nav-item"><a href="#contact">Contact</a></li>
-      </ul>
-    
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    </nav>
+  <header class="site-header site-header--over">
+    <div class="site-header__inner">
+      <a class="wordmark" href="/">kōhī<small>by Ifuku</small></a>
+
+      <!-- Filled in by site.js. Stays hidden if the script never runs. -->
+      <a class="session-status" href="/#sessions" hidden>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="session-status__text"></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span class="nav-toggle__bars"></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#room">The room</a></li>
+          <li class="nav__item"><a class="nav__link" href="/menu.html">Menu</a></li>
+          <li class="nav__item"><a class="nav__link" href="#sessions">Sessions</a></li>
+          <li class="nav__item"><a class="nav__link" href="/gallery.html">Gallery</a></li>
+          <li class="nav__item"><a class="nav__link" href="#visit">Visit</a></li>
+        </ul>
+        <p class="nav__meta">
+          44 Stanley Avenue, Milpark<br>
+          <a href="tel:+27623141224">+27 62 314 1224</a>
+        </p>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Amazing Coffee, Good Vibes</h2>
-      <p>Your favourite café — putting our heart in every cup, crafted with passion.</p>
-      <button class="btn" onclick="scrollToMenu()">See Our Menu</button>
-      <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
-    </div>
-    <div class="scroll-indicator"></div>
-  </section>
+  <main id="main">
 
-  <section class="section" id="about">
-    <h3>About Us</h3>
-    <p class="subtitle">
-      Kōhī is a café, micro-gallery, and listening room rooted in the quiet dialogue between Japanese restraint and warm African design. Our name means "coffee" in Japanese
-           - an entry point into something broader: a cultural ritual built around mindful hospitality, carefully crafted matcha and coffee, and the deep listening tradition of the jazz kissa.
-           At the heart of the space sit our speakers and turntables where selectors and DJs spin vinyls with the same calm precision that defines everything we do. Globally informed, grounded in Joburg's
-           creative soil - this is where Japanese craftsmanship, <i>jazu</i>, and African hospitality meet.
-      
-    </p>
-    <video class="lazy-video" poster="./images/IMG_5652.jpeg" preload="none" controls>
-        <source data-src="./images/reels/Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-  </section>
-  <hr>
-  <section class="section menusec" id="menu">
-    <h3>Our Specialities</h3>
-    <p class="subtitle">Every item on our menu is prepared with premium ingredients and a lot of love</p>
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="/assets/img/hero-1200.webp"
+             srcset="/assets/img/hero-480.webp 480w, /assets/img/hero-800.webp 800w, /assets/img/hero-1200.webp 1200w, /assets/img/hero-1600.webp 1600w, /assets/img/hero-2160.webp 2160w"
+             sizes="100vw" width="2160" height="3840" fetchpriority="high"
+             alt="Two guests on wooden bar stools drinking iced matcha at the Kōhī counter, with a tall wooden speaker cabinet and an indigo noren on the plaster wall behind them.">
+      </div>
+      <div class="hero__scrim"></div>
 
-    <div class="features"> 
-        <!--NOTE IDEA: CLICK EACH ITEM TO REVEAL EXTENSIVE MENU OR JUST SEPERATE MENU PAGE?-->
-      <div class="feature-box coffee-box">
-        <!--div class="feature-icon">☕</div-->
-        <div class="feature-title">Premium Coffee</div>
-        <div class="feature-desc">Ethically sourced beans, expertly roasted and authentically brewed to perfection. From espresso to pour-over, we've got your caffeine fix covered.</div>
-      </div>
-      <!--div class="feature-box">
-        <div class="feature-icon">🍵</div>
-        <div class="feature-title">Specialty Teas</div>
-        <div class="feature-desc">Curated selection of premium loose-leaf teas from around the world, perfect for tea enthusiasts.</div>
-      </div-->
-      <div class="feature-box pastry-box">
-        <!--div class="feature-icon">🥐</div-->
-        <div class="feature-title">Fresh Pastries and Desserts</div>
-        <div class="feature-desc">Buttery croissants, flaky danishes, baked fresh every morning by our talented pastry team.</div>
-      </div>
-      </div>
-      <p class="subtitle"><a href="./menu.html">See our full menu</a></p>
-  </section>
-  <hr>
-  <section class="section" id="sessions">
-    <h3>Kohi Sessions</h3>
-    <p class="subtitle">On the first and last Sunday of every month, our space transforms into a jazzy paradise. 
-      Bring your own vinyls, come along and listen, bring some friends, 
-      have some coffee and pastries and most importantly have a great time.</p>
-      <p class="subtitle"><a href="https://music.apple.com/za/playlist/jazz-kohi/pl.u-pMylDXvu43Wj6xz" target="_blank">Listen to our playlist</a></p>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img class="top-right" src="./images/sessions1.png" alt="Coffee" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img class="bottom-right" src="./images/sessions4.png" alt="Coffee" loading="lazy">
-      </div>
-      <div class="gallery-item">
-        <img class="top-right" src="./images/sessions5.png" alt="Coffee" loading="lazy">
-      </div>
-    </div>
-  </section>
-    <hr>
-    <section class="section gallerysec" id="gallery">
-      <h3>Our Gallery</h3>
-      <p class="subtitle">Take a peek at our cozy space and delicious offerings</p>
-      
-      <div class="gallery">
-        <div class="gallery-item">
-          <img class="bottom-right" src="./images/image1.jpeg" alt="Coffee" loading="lazy">
-          <div class="gallery-overlay">
-            <div class="feature-title">Artisan Coffee</div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img class="bottom-left" src="./images/image17.jpeg" alt="Pastries" loading="lazy">
-          <div class="gallery-overlay">
-            <div class="feature-title">Fresh Pastries</div>
-          </div>
-        </div>
-        <div class="gallery-item see-more">
-          <div class="gallery-overlay">
-            <div class="feature-title">See More</div>
-          </div>
-        </div>
-      </div>
-      </section>
-  
-<hr>
-  
-
-  <section class="cta-section" id="contact">
-    <div class="cta-content">
-      <h3>Ready to Experience the Best Coffee in Town?</h3>
-      <p class="subtitle">Come to our beautiful space in 44 Stanley or phone us to place an order, book a table, or make any inquiries. We're here to serve you!</p>
-      <div class="embed-map-responsive"><div class="embed-map-container"><iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Kohi%20by%20i&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe></div><style>.embed-map-responsive{position:relative;text-align:right;width:100%;height:0;padding-bottom:66.66666666666666%;}.embed-map-container{overflow:hidden;background:none!important;width:100%;height:100%;position:absolute;top:20px;left:0;bottom:20px;}.embed-map-frame{width:100%!important;height:100%!important;position:absolute;top:0;left:0;}</style></div>
-      
-      <div class="social-links">
-        <!--a href="#" class="social-icon">📘</a-->
-        <a href="https://www.instagram.com/kohi_by_ifuku/?hl=en" class="social-icon">🅾</a>
-        <!--a href="#" class="social-icon">🐦</a-->
-      </div>
-    </div>
-    
-    <div class="reviews"><h3>Our Reviews</h3>
-      <div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="311745" data-website="1"></div><script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
-    </div>
-      <!--iframe class="reviewsframe" src="https://widgets.sociablekit.com/google-reviews/iframe/25635278" frameborder="0"></iframe></div-->
-  </section>
-<!--section class="stats">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-number">1+</div>
-      <div class="stat-label">Years Serving</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">20+</div>
-      <div class="stat-label">Menu Items</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">1000+</div>
-      <div class="stat-label">Happy Customers</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Fresh Daily</div>
-    </div>
-  </div>
-</section-->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>About</h4>
-        <p>We are are dedicated to bringing you the most jazzy, authentic café experience available. 
-          We take pride and care in our craftsmanship in order to make the most exceptional coffee you can find in Johannesburg.
-          From hand-selected beans to artisan pastries baked fresh daily, every detail is crafted 
-          with care and innovation. Our cozy, wondrous space is designed to be your home away from home.
+      <div class="hero__inner">
+        <p class="label hero__label">44 Stanley&nbsp;&nbsp;·&nbsp;&nbsp;Milpark, Johannesburg</p>
+        <h1 class="hero__title">Good coffee, and a room built for <em>listening</em>.</h1>
+        <p class="lede hero__lede">
+          A small café in Milpark that doubles as a gallery and a listening
+          room. The coffee is serious, and so is the hi-fi.
         </p>
+        <div class="hero__foot">
+          <a class="btn" href="#visit">Find us</a>
+          <a class="cta" href="#sessions"><span class="cta__line"></span> Kōhī Sessions</a>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="#about">About Us</a>
-        <a href="./menu.html">Menu</a>
-        <a href="./gallery.html" >Gallery</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-section">
-        <h4>Hours</h4>
-        <p>Mon - Sat: 8:00 AM - 5:00 PM</p>
-        <p>Sun: 8:00 AM - 4:00 PM</p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <a href="https://maps.app.goo.gl/bEwSYWbxE543MDVM7">📍 44 Stanley Avenue</a>
-        <p class="cell-no">📞 +27 062 314 1224</p>
-        <p><a href="https://www.instagram.com/kohi_by_ifuku/?hl=en">@kohi_by_ifuku on Instagram</a></p>
-        <!--p>✉️ hello@cafename.com</p-->
+
+      <p class="scroll-cue" style="position:absolute;right:var(--gutter);bottom:clamp(3.5rem,2rem + 7vw,7rem);flex-direction:column;gap:.75rem;">
+        <span class="visually-hidden">Scroll for more</span>
+      </p>
+    </section>
+
+    <!-- ================= Marquee ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Espresso &amp; filter</span>
+        <span class="marquee__item">Matcha, whisked to order</span>
+        <span class="marquee__item">Pastry, baked that morning</span>
+        <span class="marquee__item">Records, twice a month</span>
+        <span class="marquee__item">Open from eight</span>
+        <span class="marquee__item">44 Stanley, Milpark</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2026 Kōhī by Ifuku. All Rights Reserved. | Crafted with ❤️
+
+    <!-- ================= Statement ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid12">
+          <p class="label" style="grid-column:1/span 2" data-reveal>The name</p>
+          <div style="grid-column:4/span 8" data-reveal>
+            <p class="statement__body">
+              <em>Kōhī</em> just means coffee in Japanese. The rest came later:
+              the matcha, the records, and the <em>jazz kissa</em> habit of
+              sitting still long enough to actually listen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= The room ================= -->
+    <section class="section section--tight" id="room" aria-labelledby="room-title">
+      <div class="wrap">
+        <div class="grid12 feature">
+          <figure class="figure feature__media" data-reveal>
+            <img src="/assets/img/sessions-crowd-800.webp"
+                 srcset="/assets/img/sessions-crowd-480.webp 480w, /assets/img/sessions-crowd-800.webp 800w, /assets/img/sessions-crowd-1125.webp 1125w"
+                 sizes="(min-width: 60rem) 46vw, 92vw"
+                 width="1125" height="1985" loading="lazy" class="ratio-3-4"
+                 alt="A tall wooden LS-1500 loudspeaker cabinet against a plaster wall, beside a shelf holding a Chemex, glassware and small teapots.">
+            <figcaption>The LS-1500, and the shelf beside it.</figcaption>
+          </figure>
+
+          <div class="feature__body" data-reveal style="--reveal-delay:120ms">
+            <p class="label">The room</p>
+            <h2 class="headline" id="room-title">Bare plaster, a lot of wood, and speakers that take up more room than they should.</h2>
+            <p class="body-muted">
+              Kōhī is a café first. It's also a small gallery, and a listening
+              room whenever someone puts a record on. The turntables sit behind
+              the counter, next to the coffee, which tells you most of what you
+              need to know about the place.
+            </p>
+            <p class="body-muted">
+              The room borrows from Japan and from Joburg in roughly equal
+              measure. Restraint and good joinery from one,
+              <span class="serif-italic">jazu</span> and the hospitality from
+              the other.
+            </p>
+            <a class="cta" href="/gallery.html"><span class="cta__line"></span> See the space</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= The ritual ================= -->
+    <section class="section section--tight" id="ritual" aria-labelledby="ritual-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="label">The ritual</p>
+            <h2 class="section-head__title" id="ritual-title">What we make</h2>
+          </div>
+          <a class="cta" href="/menu.html"><span class="cta__line"></span> Full menu</a>
+        </div>
+
+        <div class="ritual">
+          <a class="ritual__item" href="/menu.html" data-reveal>
+            <div class="ritual__media">
+              <img src="/assets/img/espresso-800.webp"
+                   srcset="/assets/img/espresso-480.webp 480w, /assets/img/espresso-800.webp 800w, /assets/img/espresso-1125.webp 1125w"
+                   sizes="(min-width: 60rem) 30vw, 92vw"
+                   width="1125" height="1999" loading="lazy" class="ratio-3-4"
+                   alt="A barista's hands at the lever of a polished espresso machine.">
+            </div>
+            <h3 class="ritual__title">Coffee</h3>
+            <p class="ritual__desc">Beans we know the source of, roasted light enough to taste. Espresso, or filter if you've got the time.</p>
+          </a>
+
+          <a class="ritual__item" href="/menu.html" data-reveal style="--reveal-delay:100ms">
+            <div class="ritual__media">
+              <img src="/assets/img/matcha-latte-428.webp"
+                   srcset="/assets/img/matcha-latte-428.webp 428w"
+                   sizes="(min-width: 60rem) 30vw, 92vw"
+                   width="428" height="640" loading="lazy" class="ratio-3-4"
+                   alt="A matcha latte with a leaf poured into the foam, on a dark wooden bench.">
+            </div>
+            <h3 class="ritual__title">Matcha</h3>
+            <p class="ritual__desc">Whisked to order, hot or over ice. Plenty of people come in for this and never touch the coffee.</p>
+          </a>
+
+          <a class="ritual__item" href="/menu.html" data-reveal style="--reveal-delay:200ms">
+            <div class="ritual__media">
+              <img src="/assets/img/pastry-750.webp"
+                   srcset="/assets/img/pastry-480.webp 480w, /assets/img/pastry-750.webp 750w"
+                   sizes="(min-width: 60rem) 30vw, 92vw"
+                   width="750" height="1000" loading="lazy" class="ratio-3-4"
+                   alt="A croissant and a Basque cheesecake under a glass cloche on the counter.">
+            </div>
+            <h3 class="ritual__title">Pastry</h3>
+            <p class="ritual__desc">Croissants, danishes, Basque cheesecake. Baked in the morning and usually gone by mid-afternoon.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Sessions ================= -->
+    <section class="section is-dark" id="sessions" aria-labelledby="sessions-title">
+      <div class="wrap">
+        <div class="grid12 sessions__grid">
+          <div class="sessions__body" data-reveal>
+            <p class="label label--accent">Kōhī Sessions</p>
+            <h2 class="display" id="sessions-title">Bring a record.</h2>
+            <p class="body-muted">
+              First and last Sunday of the month, the room turns into a listening
+              session. Bring something to play if you've got it. If not, come
+              anyway and sit at the back. Coffee and pastry run the whole time.
+            </p>
+
+            <dl class="tracklist">
+              <div class="tracklist__row"><dt>When</dt><dd>First &amp; last Sunday</dd></div>
+              <div class="tracklist__row"><dt>Doors</dt><dd>08:00–16:00</dd></div>
+              <div class="tracklist__row"><dt>Entry</dt><dd>Free, just walk in</dd></div>
+              <div class="tracklist__row"><dt>Bring</dt><dd>A record, if you have one</dd></div>
+            </dl>
+
+            <a class="cta" href="https://music.apple.com/za/playlist/jazz-kohi/pl.u-pMylDXvu43Wj6xz"
+               target="_blank" rel="noopener">
+              <span class="cta__line"></span> Hear the playlist
+            </a>
+          </div>
+
+          <div class="sessions__art record-wrap" data-reveal style="--reveal-delay:140ms">
+            <div class="record" aria-hidden="true"><span class="record__disc"></span></div>
+            <p class="record-label"><span>Jazz Kōhī</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Gallery teaser ================= -->
+    <section class="section section--tight" id="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="label">Gallery</p>
+            <h2 class="section-head__title" id="gallery-title">A look around</h2>
+          </div>
+          <a class="cta" href="/gallery.html"><span class="cta__line"></span> All photographs</a>
+        </div>
+
+        <div class="tile-grid" data-reveal>
+          <a class="tile" href="/gallery.html">
+            <img src="/assets/img/selector-480.webp"
+                 srcset="/assets/img/selector-480.webp 480w, /assets/img/selector-800.webp 800w"
+                 sizes="(min-width: 60rem) 24vw, 46vw"
+                 width="1125" height="1988" loading="lazy" class="ratio-3-4"
+                 alt="A selector at the decks behind a Lianne La Havas record sleeve, a vintage speaker cabinet behind him.">
+            <span class="tile__caption">The selector</span>
+          </a>
+          <a class="tile" href="/gallery.html">
+            <img src="/assets/img/matcha-iced-480.webp" sizes="(min-width: 60rem) 24vw, 46vw"
+                 width="480" height="640" loading="lazy" class="ratio-3-4"
+                 alt="An iced matcha latte on a wooden coaster against a bare concrete wall.">
+            <span class="tile__caption">Iced matcha</span>
+          </a>
+          <a class="tile" href="/gallery.html">
+            <img src="/assets/img/japan-style-480.webp"
+                 srcset="/assets/img/japan-style-480.webp 480w, /assets/img/japan-style-800.webp 800w"
+                 sizes="(min-width: 60rem) 24vw, 46vw"
+                 width="1125" height="2001" loading="lazy" class="ratio-3-4"
+                 alt="A stack of Monocle magazines and a book titled Japan Style on a wooden shelf.">
+            <span class="tile__caption">Reading material</span>
+          </a>
+          <a class="tile" href="/gallery.html">
+            <img src="/assets/img/guests-480.webp"
+                 srcset="/assets/img/guests-480.webp 480w, /assets/img/guests-640.webp 640w"
+                 sizes="(min-width: 60rem) 24vw, 46vw"
+                 width="640" height="640" loading="lazy" class="ratio-3-4"
+                 alt="Two guests laughing over iced matcha at a wooden table beneath a framed portrait.">
+            <span class="tile__caption">Sunday regulars</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Visit ================= -->
+    <section class="section" id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="label">Visit</p>
+            <h2 class="section-head__title" id="visit-title">Come by</h2>
+          </div>
+        </div>
+
+        <div class="grid12 visit__grid">
+          <div class="visit__info" data-reveal>
+            <div class="detail">
+              <p class="label detail__label">Address</p>
+              <p class="detail__value">
+                <a class="link" href="https://maps.app.goo.gl/bEwSYWbxE543MDVM7" target="_blank" rel="noopener">
+                  44 Stanley Avenue<br>Milpark, Johannesburg 2092
+                </a>
+              </p>
+            </div>
+
+            <div class="detail">
+              <p class="label detail__label">Telephone</p>
+              <p class="detail__value"><a class="link" href="tel:+27623141224">+27 62 314 1224</a></p>
+            </div>
+
+            <div class="detail">
+              <p class="label detail__label">Hours</p>
+              <dl class="hours">
+                <div class="hours__row"><dt>Monday to Saturday</dt><dd>08:00–17:00</dd></div>
+                <div class="hours__row"><dt>Sunday</dt><dd>08:00–16:00</dd></div>
+              </dl>
+            </div>
+
+            <div class="detail">
+              <p class="label detail__label">Elsewhere</p>
+              <div class="social">
+                <a href="https://www.instagram.com/kohi_by_ifuku/" target="_blank" rel="noopener" aria-label="Kōhī by Ifuku on Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/>
+                  </svg>
+                </a>
+                <a href="https://music.apple.com/za/playlist/jazz-kohi/pl.u-pMylDXvu43Wj6xz" target="_blank" rel="noopener" aria-label="The Jazz Kōhī playlist on Apple Music">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path d="M9 18V6l10-2v12"/>
+                    <circle cx="6.5" cy="18" r="2.5"/>
+                    <circle cx="16.5" cy="16" r="2.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="visit__map" data-reveal style="--reveal-delay:120ms">
+            <iframe class="map-frame" title="Map showing Kōhī by Ifuku at 44 Stanley Avenue, Milpark"
+                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Kohi%20by%20Ifuku%2044%20Stanley&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <p class="footer__mark">kōhī</p>
+          <p>A café and listening room at 44 Stanley, Milpark.</p>
+        </div>
+        <div class="footer__col">
+          <p class="label">Pages</p>
+          <a href="/#room">The room</a>
+          <a href="/menu.html">Menu</a>
+          <a href="/#sessions">Sessions</a>
+          <a href="/gallery.html">Gallery</a>
+          <a href="/#visit">Visit</a>
+        </div>
+        <div class="footer__col">
+          <p class="label">Hours</p>
+          <p>Mon–Sat&nbsp;&nbsp;08:00–17:00</p>
+          <p>Sunday&nbsp;&nbsp;08:00–16:00</p>
+        </div>
+        <div class="footer__col">
+          <p class="label">Contact</p>
+          <a href="https://maps.app.goo.gl/bEwSYWbxE543MDVM7" target="_blank" rel="noopener">44 Stanley Avenue, Milpark</a>
+          <a href="tel:+27623141224">+27 62 314 1224</a>
+          <a href="https://www.instagram.com/kohi_by_ifuku/" target="_blank" rel="noopener">@kohi_by_ifuku</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Kōhī by Ifuku</p>
+        <p>44 Stanley Avenue, Milpark, Johannesburg 2092</p>
+        <p class="footer__credit">Developed by <a href="https://williammcilleron.netlify.app" target="_blank" rel="noopener">William McIlleron</a></p>
+      </div>
     </div>
   </footer>
 
-  <script src="./script.js">  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Kōhī by Ifuku",
+    "description": "A café and listening room at 44 Stanley in Milpark, Johannesburg.",
+    "url": "https://www.kohibyifuku.co.za/",
+    "image": "https://www.kohibyifuku.co.za/og-cover.jpg",
+    "telephone": "+27623141224",
+    "servesCuisine": ["Coffee", "Matcha", "Pastry"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "44 Stanley Avenue, Milpark",
+      "addressLocality": "Johannesburg",
+      "addressRegion": "Gauteng",
+      "postalCode": "2092",
+      "addressCountry": "ZA"
+    },
+    "hasMap": "https://maps.app.goo.gl/bEwSYWbxE543MDVM7",
+    "sameAs": ["https://www.instagram.com/kohi_by_ifuku/"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ]
+  }
   </script>
-  <script>
-    const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
 
-  hamburger.addEventListener("click", ()  => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  })
-
-  document.querySelectorAll(".nav-item a").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  }))
-
-  </script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
