@@ -272,7 +272,10 @@
   width: 100%;
   max-width: var(--wrap);
   margin-inline: auto;
-  padding: 0 var(--gutter) clamp(3.5rem, 2rem + 7vw, 7rem);
+  /* Top padding keeps the label clear of the fixed header when the content is
+     taller than the window (short laptop screens, landscape phones). It does
+     nothing on tall windows, where the content is bottom-aligned anyway. */
+  padding: calc(var(--header-h) + var(--space-m)) var(--gutter) clamp(3.5rem, 2rem + 7vw, 7rem);
 }
 
 .hero__title {
