@@ -1,1 +1,5 @@
 http://kohibyifuku.co.za/* https://www.kohibyifuku.co.za/:splat 301!
+
+# The repo root is served, so README.md is public. 301 and not 404: redirect
+# codes are the only supported mechanism, and they win over a real file.
+/README.md    /    301
